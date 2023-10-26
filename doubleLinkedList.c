@@ -4,17 +4,17 @@
 #include<stdio.h>
 #include<conio.h>
 
-typedef struct doubleLinkedList{
+typedef struct doubleLinkedList
+{
     struct doubleLinkedList *prev;
     int data;
-    struct doubleLinkedList *next;
-    
+    struct doubleLinkedList *next;  
 } node;
 
-node *head = '\0';
+node *head = '\0', *t, *h; //head, t, h are Global Variables
 
-void create(){
-    node *t, *h;
+void create() 
+{
     int a;
     char choice;
     
@@ -24,7 +24,7 @@ void create(){
         scanf("%d", &a);
         t = (node *)malloc(sizeof(node));
     
-        if (head == '\0')
+        if(head == '\0')
         {
             head = t;
             h = t;
@@ -45,37 +45,38 @@ void create(){
     }while(choice == 'y' || choice == 'Y');
 }
 
-node search(int val){
-    node *h = head;
-    while(h -> data != val)
+node search(int val) //Probably Completed
+{
+    node *p = head;
+    while(p -> data != val)
     {
-        h = h -> next;
+        p = p -> next;
     }
-    return *h;
+    return *p;
 } 
 
-void display()
+void display() //Completed...
 {
-    node *h = head ;
-    while(h != '\0')
+    node *p = head ;
+    while(p != '\0')
     {
-        printf("%d\n", h -> data);
-        h = h -> next;
+        printf("%d\n", p -> data);
+        p = p -> next;
     }
 }
 
-void displayReversed()
+void displayReversed() //Completed...
 {
-    node *h = head;
-    while(h -> next != '\0') //Finding Address of last node
+    node *p = head;
+    while(p -> next != '\0') //Finding Address of last node
     {
-        h = h -> next;
+        p = p -> next;
     }
 
-    while(h != '\0') //Traversal from last to first node
+    while(p != '\0') //Traversal from last to first node
     {
-        printf("%d", h->data);
-        h = h -> prev;
+        printf("%d", p->data);
+        p = p -> prev;
     }
 }
 

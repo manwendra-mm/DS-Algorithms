@@ -10,7 +10,7 @@ typedef struct linkList //NODE data type
     struct linkList *next;
 }node;
 
-node *head , *t ; //Initializing head as Null
+node *head, *t, *h;
 
 
 void menu(){
@@ -21,7 +21,6 @@ void menu(){
 int create() //create function... completed
 {
     int x;
-    node *h;
     char a;
     do
     {
@@ -43,7 +42,7 @@ int create() //create function... completed
         }
         
         fflush(stdin); //This is not doing any problem
-        printf("3--%d\n", head); //Testing
+        printf("3--%d\n", head); //This line is for Testing (No other use)
 		printf("Create new Node? (Y/N): ");
         a = getch();
     } while (a == 'Y' || a == 'y');
@@ -78,31 +77,32 @@ int count() //count function... completed
         printf("No Elements to Count");
     }
     int c=0;
-    node *h = head;
-    while(h != '\0'){
+    
+    node *p = head;
+    while(p != '\0'){
         c++;
-        h = h -> next;
+        p = p -> next;
     }
     return c;
 }
 
 node* search(int x) //Search Function... completed 
 {
-	node *h;
-	h = head;
-    if (h == '\0'){
+	node *p;
+	p = head;
+    if (p == '\0'){
         printf("No Elements are present ");
         return '\0';
     }
 
-	while(h -> n != x){
-        h = h->next;
-        if(h -> next == '\0'){
+	while(p -> n != x){
+        p = p->next;
+        if(p -> next == '\0'){
             printf("Element not Found");
             return '\0';
         }
 	}
-	return h;
+	return p;
 }
 
 /*delete function..., p is Index to delete, h2 will point the node to be deleted 
@@ -133,7 +133,7 @@ int delByPosition(int p) //Problem found during Testing
 
 void addBefore(int x, int a) //x to be searched & a to be added... completed
 {
-    node *h, *p, *t;
+    node *r, *p, *t;
     p = search(x);
     t = (node *)malloc(sizeof(node));
     t -> n = a;
@@ -144,12 +144,12 @@ void addBefore(int x, int a) //x to be searched & a to be added... completed
     }
     else
 	{
-		h = head;
-		while(h -> next != p)
+		r = head;
+		while(r -> next != p)
 		{
-			h = h-> next;
+			r = r-> next;
 		}
-		h -> next = t;
+		r -> next = t;
 		t -> next = p;	
 	}
 }
@@ -196,7 +196,7 @@ void rev() //Reverse... Completed
 
 int main()
 {
-	head = '\0'; // initializing
+	head = '\0'; // initializing head as Null
     int a, val, data, c; /*val is value to be searched, data is value to be Inserted, a used in switch, 
 	c stores return value of count()*/ 
 
