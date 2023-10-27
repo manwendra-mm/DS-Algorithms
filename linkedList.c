@@ -50,14 +50,14 @@ int create() //create function... completed
 return 1;
 }
 
-int display() //display function... completed
+void display() //display function... completed
 {
-	printf("3--%d\n", head); //Testing
+	printf("3--%d\n", head); //For Testing
     node *d;
     d = head;
     if(d == '\0'){
         printf("No Elements to Display!");
-        return 0;
+        return;
     }
     else
     {
@@ -86,20 +86,19 @@ int count() //count function... completed
     return c;
 }
 
-node* search(int x) //Search Function... completed 
+node* search(int x) //Search Function... completed
 {
 	node *p;
 	p = head;
     if (p == '\0'){
         printf("No Elements are present ");
-        return '\0';
+        return p;
     }
 
 	while(p -> n != x){
         p = p->next;
-        if(p -> next == '\0'){
-            printf("Element not Found");
-            return '\0';
+        if(p == '\0'){  
+            return p;
         }
 	}
 	return p;
@@ -131,42 +130,51 @@ int delByPosition(int p) //Problem found during Testing
     free(h2);
 }
 
-void addBefore(int x, int a) //x to be searched & a to be added... completed
+void addBefore(int x, int a) //x to be searched & a to be added... Completed
 {
-    node *r, *p, *t;
+    node *r, *p, *q;
     p = search(x);
-    t = (node *)malloc(sizeof(node));
-    t -> n = a;
+    
+    q = (node *)malloc(sizeof(node));
+    q -> n = a;
     if (p == head) // add before 1st element
     {
-        t -> next = head;
-        head = t;
+        q -> next = head;
+        head = q;
     }
+    else if (p == '\0')
+	{
+    	printf("Element not Found ");
+	}
     else
 	{
 		r = head;
-		while(r -> next != p)
+		while(r -> next != p) //For finding the node which is before the searched node
 		{
 			r = r-> next;
 		}
-		r -> next = t;
-		t -> next = p;	
+		r -> next = q;
+		q -> next = p;	
 	}
+	
 }
 
-void addAfter(int x, int a)  //x is searched, a is added... Some problem spotted in case of Last Node, check.. 
+void addAfter(int x, int a)  //x is searched, a is added... Completed
 {
     node *p, *t;
     p = search(x);
-    if (p=='\0'){
+    if (p =='\0'){
         printf("Searched element not Found");
-        return;
+        
     }
-    t = (node *)malloc(sizeof(node));
-    t -> n = a;
-    t -> next = p-> next;
-    p->next = t;
-    printf("Element successfully added after ");
+    else{
+    	t = (node *)malloc(sizeof(node));
+	    t -> n = a;
+	    t -> next = p-> next;
+	    p->next = t;
+	    printf("Element successfully added after ");
+	}
+    
 }
 
 void rev() //Reverse... Completed
