@@ -12,7 +12,6 @@ typedef struct linkList //NODE data type
 
 node *head, *t, *h;
 
-
 void menu(){
     printf("\n\n1. Create \n2. Display \n3. Count \n4. Delete by Position \n5. Add Before \n");
     printf("6. Add After\n 7. Reverse \n 8. Quit");
@@ -86,11 +85,12 @@ int count() //count function... completed
     return c;
 }
 
-node* search(int x) //Search Function... completed
+node* search(int x) //Search Function returns '\0' if Element not found... completed
 {
 	node *p;
 	p = head;
-    if (p == '\0'){
+    if (p == '\0') //Test case- When no element is present
+    {
         printf("No Elements are present ");
         return p;
     }

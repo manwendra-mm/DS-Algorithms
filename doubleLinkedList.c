@@ -45,38 +45,61 @@ void create()
     }while(choice == 'y' || choice == 'Y');
 }
 
-node search(int val) //Probably Completed
+node* search(int val) //Probably Completed
 {
     node *p = head;
+    if (p == '\0') //Test case- When no element is present
+    {
+        printf("No Elements are present ");
+        return p;
+    }
+
     while(p -> data != val)
     {
         p = p -> next;
+        if(p == '\0'){  
+            return p;
+        }
     }
-    return *p;
-} 
+    return p;
+}
 
 void display() //Completed...
 {
     node *p = head ;
-    while(p != '\0')
+
+    if(p == '\0') //Test Case- When no Element present
     {
-        printf("%d\n", p -> data);
-        p = p -> next;
+        printf("No Elements to Display");
+    }
+    else 
+    {
+        while(p != '\0')
+        {
+            printf("%d\n", p -> data);
+            p = p -> next;
+        }
     }
 }
 
 void displayReversed() //Completed...
 {
     node *p = head;
-    while(p -> next != '\0') //Finding Address of last node
+    if (p =='\0') //Test Case- For No elements
     {
-        p = p -> next;
+        printf("No Element Present");
     }
+    else{
+        while(p -> next != '\0') //Finding Address of last node
+        {
+            p = p -> next;
+        }
 
-    while(p != '\0') //Traversal from last to first node
-    {
-        printf("%d", p->data);
-        p = p -> prev;
+        while(p != '\0') //Traversal from last to first node
+        {
+            printf("%d", p->data);
+            p = p -> prev;
+        }
     }
 }
 
