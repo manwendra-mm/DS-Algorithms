@@ -14,7 +14,7 @@ node *head, *t, *h;
 
 void menu(){
     printf("\n\n1. Create \n2. Display \n3. Count \n4. Delete by Position \n5. Add Before \n");
-    printf("6. Add After\n 7. Reverse \n 8. Quit");
+    printf("6. Add After\n7. Reverse \n8. Quit");
 }
 
 int create() //create function... completed
@@ -70,10 +70,10 @@ void display() //display function... completed
 	
 }
 
-int count() //count function... completed
+int count() //count(returns 0 if no element)... completed
 {
     if (head =='\0'){
-        printf("No Elements to Count");
+        printf("No Elements to Count\n");
     }
     int c=0;
     
@@ -108,13 +108,22 @@ node* search(int x) //Search Function returns '\0' if Element not found... compl
 & h1 will point its previous node */
 int delByPosition(int p) //Problem found during Testing
 {
-    int i ;
+    int i;
     node *h1, *h2;
     int c = count();
-    if (p == 0 || p > c){
+    
+    if (head == '\0') //Test case 1 
+    {
+        printf("No Elements are Present");
+        return 0;
+    }
+    if (p < 1 || p > c) //Test case 2
+    {
         printf("Invalid Index Number");
         return 0;
     }
+    //this function is solved till here, continue from here.........................
+
     if (p == 1){
         h1 = head;
         head = head -> next;
@@ -134,18 +143,21 @@ void addBefore(int x, int a) //x to be searched & a to be added... Completed
 {
     node *r, *p, *q;
     p = search(x);
-    
+
+    if (p == '\0') //Test case
+	{
+    	printf("Element not Found ");
+        return;
+	}
+
     q = (node *)malloc(sizeof(node));
     q -> n = a;
+    
     if (p == head) // add before 1st element
     {
         q -> next = head;
         head = q;
     }
-    else if (p == '\0')
-	{
-    	printf("Element not Found ");
-	}
     else
 	{
 		r = head;
@@ -165,8 +177,8 @@ void addAfter(int x, int a)  //x is searched, a is added... Completed
     p = search(x);
     if (p =='\0'){
         printf("Searched element not Found");
-        
     }
+
     else{
     	t = (node *)malloc(sizeof(node));
 	    t -> n = a;
@@ -216,16 +228,16 @@ int main()
             system ("clear");
             menu();
             
-            case 1: 
+            case 1: //Create
             create();
             break;
 
-            case 2:
+            case 2: //Display
             printf("1--%d\n", head); //Testing
             display();
             break;
 
-            case 3: 
+            case 3: //Count
             c = count();
             printf("No. of elements in the Linked List: %d ", c);
             break;
