@@ -1,5 +1,5 @@
 //Program to Implement Double Linked List
-//Code is not complete yet
+//This Program is not complete yet
 
 #include<stdio.h>
 #include<conio.h>
