@@ -147,7 +147,11 @@ void delByPosition(int pos)
 {
     node* temp = head; // Creating a temporary variable pointing to head
     int i;
-    if (pos == 0) 
+    if (head == '\0'){
+        printf("No Node is Present");
+        return;
+    }
+    if (pos == 1) 
     {
         printf("\nElement deleted is : %d\n", temp->n);
         head = head->next; // Advancing the head pointer
@@ -155,7 +159,7 @@ void delByPosition(int pos)
         free(temp); // Node is deleted
     }
     else {
-        for (i = 0; i < pos - 1; i++) {
+        for (i = 2; i < pos; i++) {
             temp = temp->next;
         }
         // Now temp pointer points to the previous node of the node to be deleted
