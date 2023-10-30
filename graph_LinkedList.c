@@ -54,7 +54,8 @@ vertex* search(int x)
 {
 	vertex *h;
 	h = head;
-    if (h == '\0'){
+    if (h == '\0') //No Vertex
+    {
         printf("No Vertex is present ");
         return '\0';
     }
@@ -75,7 +76,7 @@ void createEdge(int a, int b)
     edge *p1, *p2, *t1, *t2;
     v1 = search(a);
     v2 = search(b);
-    if(v1 == '\0' || v2 == '\0')
+    if(v1 == '\0' || v2 == '\0') 
 	{
         printf("One or Both Vertex do not exist");
     }
