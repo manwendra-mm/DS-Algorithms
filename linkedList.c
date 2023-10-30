@@ -107,7 +107,8 @@ node* search(int x) //Search Function returns '\0' if Element not found... compl
 
 /*delete function..., p is Index to delete, h2 will point the node to be deleted 
 & h1 will point its previous node */
-int delByPosition(int p) //Problem found during Testing
+
+/*int delByPosition(int p) //Problem found during Testing
 {
     int i;
     node *h1, *h2;
@@ -139,7 +140,36 @@ int delByPosition(int p) //Problem found during Testing
     }
     h1 -> next = h2 -> next;
     free(h2);
+} 
+*/
+
+void delByPosition(int pos)
+{
+    node* temp = head; // Creating a temporary variable pointing to head
+    int i;
+    if (pos == 0) 
+    {
+        printf("\nElement deleted is : %d\n", temp->n);
+        head = head->next; // Advancing the head pointer
+        temp->next = NULL;
+        free(temp); // Node is deleted
+    }
+    else {
+        for (i = 0; i < pos - 1; i++) {
+            temp = temp->next;
+        }
+        // Now temp pointer points to the previous node of the node to be deleted
+        node* del = temp->next; // del pointer points to the node to be deleted
+        temp->next = temp->next->next;
+        printf("\nElement deleted is : %d\n", del->n);
+        del->next = NULL;
+        free(del); // Node is deleted
+    }
+    printf("\nUpdated Linked List is : \n");
+    display();
+    return;
 }
+
 
 void addBefore(int x, int a) //x to be searched & a to be added... Completed
 {
@@ -219,7 +249,7 @@ void rev() //Reverse... Completed
 int main()
 {
 	head = '\0'; // initializing head as Null
-    int a, val, data, c; /*val is value to be searched, data is value to be Inserted, a used in switch, 
+    int a, pos, data, c, val; /*val is value to be searched, data is value to be Inserted, a used in switch, 
 	c stores return value of count()*/ 
 
     while(1){
@@ -246,8 +276,8 @@ int main()
 
             case 4: //Del by Position
             printf("Enter the Position to be Deleted: ");
-            scanf("%d", &val);
-            delByPosition(val);
+            scanf("%d", &pos);
+            delByPosition(pos);
             break;
 
             case 5: //Add Before
