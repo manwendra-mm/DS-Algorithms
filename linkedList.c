@@ -104,45 +104,6 @@ node* search(int x) //Search Function returns '\0' if Element not found... compl
 	return p;
 }
 
-
-/*delete function..., p is Index to delete, h2 will point the node to be deleted 
-& h1 will point its previous node */
-
-/*int delByPosition(int p) //Problem found during Testing
-{
-    int i;
-    node *h1, *h2;
-    int c = count();
-    
-    if (head == '\0') //Test case 1 
-    {
-        printf("No Elements are Present");
-        return 0;
-    }
-
-    if (p < 1 || p > c) //Test case 2
-    {
-        printf("Invalid Index Number");
-        return 0;
-    }
-
-    if (p == 1){
-        h2 = head;
-        head = head -> next;
-    }
-    //this function is solved till here, continue from here.........................
-    else{
-        h1= head;
-        for (i=1 ; i<= p-2; i++ ){
-            h2 = h1;
-            h2 = h2 -> next;
-        } 
-    }
-    h1 -> next = h2 -> next;
-    free(h2);
-} 
-*/
-
 void delByPosition(int pos)
 {
     node* temp = head; // Creating a temporary variable pointing to head
