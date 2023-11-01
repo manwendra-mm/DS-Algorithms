@@ -35,21 +35,19 @@ void add()
 
 
 //2. Delete function
-void del(){
-    if(f == -1){
-        printf("No, Elements in Queue to delete"); //No Element
+void del()
+{
+
+    if(f == -1) //Test Case
+    {
+        printf("No, Elements in Queue to delete"); 
+        return;
     }
 
-    else if(f == r) //Only one element left
+    if(f == r) //Only one element left
     {
         printf("*Deleted element is: %d", queue[f]);
         f = r = -1;
-    } 
-
-    else if(f == MAX -1 && r<f) //when f is Last element of Queue
-    {
-        printf("Deleted element is: %d", queue[f]);
-        f = 0;
     }
     
     else //general case
@@ -65,21 +63,10 @@ void view(){
 	if(f == -1) //Empty Queue
     {
 		printf("There are no elements in Queue");
+        return;
 	}
 
-    else if (r < f) //for Circular Queue
-    {
-        printf("Elements are: \n");
-		for (i = f; i <= MAX-1; i++){
-			printf("%d\n", queue[i]);	
-		}
-        for (i = 0; i <= r; i++){
-			printf("%d\n", queue[i]);	
-		}
-
-	}
-
-    else //For Linear Queue
+    else //For normal case
     {
         printf("Elements are: \n");
         for (i=f; i <= r; i++){
@@ -100,7 +87,7 @@ void exit_(){
 void menu(){
     printf("\n\n1. ADD a Value\n");
     printf("2. DELETE a Value\n");
-    printf("3. View an Element of Stack\n");
+    printf("3. View Elements of Queue\n");
     printf("4. Exit\n");
     printf("Enter your Choice: ");
 }
