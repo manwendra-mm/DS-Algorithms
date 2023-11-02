@@ -57,7 +57,7 @@ node* search(int val) //Probably Completed
     while(p -> data != val)
     {
         p = p -> next;
-        if(p == '\0'){  
+        if(p == '\0'){
             return p;
         }
     }

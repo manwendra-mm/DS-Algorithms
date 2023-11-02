@@ -114,7 +114,7 @@ void exit_(){
 void menu(){
     printf("\n\n1. ADD a Value\n");
     printf("2. DELETE a Value\n");
-    printf("3. View an Element of Stack\n");
+    printf("3. View Elements of Queue\n");
     printf("4. Exit\n");
     printf("Enter your Choice: ");
 }
