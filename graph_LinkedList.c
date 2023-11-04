@@ -26,20 +26,20 @@ void createVertex() //Vertex Creation
 	char c;
     do
 	{
-	
 		vertex *t, *h;
-	    t = (vertex *)malloc(sizeof(vertex));
+	    t = (vertex *)malloc(sizeof(vertex)); //t points to new node
 	    printf("Enter the data to be stored in this Vertex: ");
-	    scanf("%d", &t -> data);
+	    scanf("%d", &t -> data); //data added to the new node
 	    
-	
-	    if(head == '\0'){
+	    if(head == '\0') //Test case
+        {
 	        head = t;
 	        h = t;
 	        t -> next = '\0';
 	        t -> firstEdge ='\0';
 	    }
-	    else{
+	    else
+        {
 	        h -> next = t;
 	        t -> next = '\0';
 	        t -> firstEdge = '\0';
@@ -50,7 +50,7 @@ void createVertex() //Vertex Creation
 	}while (c =='y' || c =='Y');
 }
 
-vertex* search(int x)  
+vertex* search(int x)  //Search Function
 {
 	vertex *h;
 	h = head;
@@ -60,9 +60,11 @@ vertex* search(int x)
         return '\0';
     }
 
-	while(h -> data != x){
+	while(h -> data != x) //Finding required node
+    {
         h = h->next;
-        if(h -> next == '\0'){
+        if(h -> next == '\0')
+        {
             printf("Element not Found");
             return '\0';
         }

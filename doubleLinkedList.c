@@ -13,7 +13,7 @@ typedef struct doubleLinkedList
 
 node *head = '\0', *t, *h; //head, t, h are Global Variables
 
-void create() 
+void create()
 {
     int a;
     char choice;
