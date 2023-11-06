@@ -19,14 +19,13 @@ typedef struct vertex{
 
 }vertex ;
 
-vertex *head='\0';
-
+vertex *head='\0', *h; //h points last inserted node
 void createVertex() //Vertex Creation
 {
 	char c;
     do
 	{
-		vertex *t, *h;
+		vertex *t;
 	    t = (vertex *)malloc(sizeof(vertex)); //t points to new node
 	    printf("Enter the data to be stored in this Vertex: ");
 	    scanf("%d", &t -> data); //data added to the new node
