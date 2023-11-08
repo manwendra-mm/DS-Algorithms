@@ -71,6 +71,14 @@ vertex* search(int x)  //Search Function
 	return h;
 }
 
+edge* searchLastEdge(){
+    h = head;
+    while(h -> next != '\0'){
+        h = h->next;
+    }
+    return h;
+}
+
 void createEdge(int a, int b)
 {
     vertex *v1, *v2; //t1 & t2 are the new nodes, p1 and p2 are previous nodes 
