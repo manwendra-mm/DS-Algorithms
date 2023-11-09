@@ -71,7 +71,8 @@ vertex* search(int x)  //Search Function
 	return h;
 }
 
-edge* searchLastEdge(){
+edge* searchLastEdge() //Gives address of the last edge of the Vertex..... Not required
+{
     h = head;
     while(h -> next != '\0'){
         h = h->next;
@@ -102,10 +103,11 @@ void createEdge(int a, int b)
         else
         {
             p1 = v1 -> firstEdge;
-            while(p1-> next != '\0')
+            while(p1-> next != '\0') //For getting address of Last Edge
             {
                 p1 = p1 -> next;
-            }
+            } 
+            //Now p1 points to last Edge
             t1 -> data = b;
             p1 -> next = t1;
             t1 -> next = '\0';
@@ -121,9 +123,11 @@ void createEdge(int a, int b)
         else 
         {
             p2 = v2 -> firstEdge;
-            while(p2 -> next != '\0'){
+            while(p2 -> next != '\0')  //For getting address of Last Edge
+            {
                 p2 = p2 -> next;
             }
+            //Now p2 points to last edge
             t2 -> data = a;
             p2 -> next = t2;
             t2 -> next = '\0';
