@@ -19,7 +19,7 @@ typedef struct vertex{
 
 }vertex ;
 
-vertex *head='\0', *h; //h points last inserted node
+vertex *head='\0', *h; //h points last inserted vertex, initially head = NULL
 void createVertex() //Vertex Creation
 {
 	char c;
@@ -51,24 +51,24 @@ void createVertex() //Vertex Creation
 
 vertex* search(int x)  //Search Function
 {
-	vertex *h;
-	h = head;
-    if (h == '\0') //No Vertex
+	vertex *s;
+	s = head;
+    if (s == '\0') //No Vertex
     {
         printf("No Vertex is present ");
         return '\0';
     }
 
-	while(h -> data != x) //Finding required node
+	while(s -> data != x) //Finding required node
     {
-        h = h->next;
-        if(h -> next == '\0')
+        s = s->next;
+        if(s == '\0')
         {
             printf("Element not Found");
             return '\0';
         }
 	}
-	return h;
+	return s;
 }
 
 edge* searchLastEdge() //Gives address of the last edge of the Vertex..... Not required
@@ -156,7 +156,8 @@ void createEdge(int a, int b)
 	
 } */
 
-void display(){
+void display()
+{
     vertex *h;
     edge *t;
     h = head;
