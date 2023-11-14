@@ -1,5 +1,4 @@
-# DS-Algorithms
-This is my First GitHub Repository which I created on 15/10/2023. 
+# DS-Algorithms 
 This Repo will be having all DSA Programs that I have solved and will be solving. These programs will be mostly in C Language.
 
 This Repository has the Programs to Implement:
