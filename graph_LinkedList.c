@@ -49,7 +49,7 @@ void createVertex() //Vertex Creation
 	}while (c =='y' || c =='Y');
 }
 
-vertex* search(int x)  //Search Function
+vertex* search(int x)  //Search Function... Completed
 {
 	vertex *s;
 	s = head;
@@ -84,7 +84,7 @@ void createEdge(int a, int b)
 {
     vertex *v1, *v2; //t1 & t2 are the new nodes, p1 and p2 are previous nodes 
     edge *p1, *p2, *t1, *t2;
-    v1 = search(a);
+    v1 = search(a); //v1 & v2 point the vertex to be connected  
     v2 = search(b);
     if(v1 == '\0' || v2 == '\0') 
 	{
