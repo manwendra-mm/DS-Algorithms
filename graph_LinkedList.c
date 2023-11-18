@@ -49,7 +49,7 @@ void createVertex() //Vertex Creation
 	}while (c =='y' || c =='Y');
 }
 
-vertex* search(int x)  //Search Function... Completed
+vertex* search(int x)  //Search Function... Problem found during testing
 {
 	vertex *s;
 	s = head;
@@ -89,9 +89,11 @@ void createEdge(int a, int b)
     if(v1 == '\0' || v2 == '\0') 
 	{
         printf("One or Both Vertex do not exist");
+        return;
     }
     else 
     {
+        
         t1 = (edge *) malloc(sizeof(edge));
         t2 = (edge *) malloc(sizeof(edge));
         if (v1 -> firstEdge == '\0') //For t1 edge
@@ -197,6 +199,7 @@ int main()
             break;
             
             case 4: exit(0);
+            break;
             
             default: printf("Invalid Choice");
 	    }
