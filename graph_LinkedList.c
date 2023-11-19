@@ -65,20 +65,22 @@ vertex* search(int x)  //Search Function... Problem found during testing
         if(s == '\0')
         {
             printf("Element not Found");
-            return '\0';
+            break;
         }
 	}
 	return s;
 }
 
-edge* searchLastEdge() //Gives address of the last edge of the Vertex..... Not required
+/*Gives address of the last edge 
+of the Vertex.....Function not required... Also mistake is there*/
+/*edge* searchLastEdge() 
 {
     h = head;
     while(h -> next != '\0'){
         h = h->next;
     }
     return h;
-}
+}  */
 
 void createEdge(int a, int b)
 {
@@ -163,6 +165,10 @@ void display()
     vertex *h;
     edge *t;
     h = head;
+    if (h == '/0'){
+        printf("No Elements present to display");
+        return;
+    }
     while (h != '\0'){
         printf("%d: ", h -> data);
         t = h -> firstEdge;
@@ -171,8 +177,6 @@ void display()
             t = t->next;
         }
         printf("\n");
-
-
         h = h-> next;
     }
 }  
