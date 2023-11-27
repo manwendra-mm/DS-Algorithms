@@ -11,7 +11,7 @@ int binarySearch(int a) //a is searched element
 {
     int f, r, m, val;
     f = 0;
-    r = sizeof(arr)/sizeof(arr[0]);
+    r = (sizeof(arr)/sizeof(arr[0]))-1;
     printf("No of Elements: \n%d\n", r); //printing size of array
     m = (f+r)/2;
     printf("Enter the value to be Searched: ");
@@ -36,17 +36,28 @@ int binarySearch(int a) //a is searched element
 
 
 int main(){
-    
+    int a;
+    int flag = '\0';
     
     printf("The Elements are:\n");
-    for (int i =0; i< sizeof(arr)/sizeof(arr[0]); i++) //Prnting elements
+    for (int i =0; i< sizeof(arr)/sizeof(arr[0]); i++) //Printing elements
     {
         printf("%d\n", arr[i]);
 
     }
 
-    
-    
+    printf("Enter the Value to be Searched: ");
+    scanf("%d", &a);
+    flag = binarySearch(a);
+    if (flag == 1){
+        printf("Element Found");
+    }
+    else{
+        printf("Element not found");
+    }
+
+
+    return 0;
 }
 
 
