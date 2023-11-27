@@ -9,19 +9,17 @@ int static arr[10] = {1, 2, 32, 43, 45, 49, 50, 67, 90, 100};
 int binarySearch(int a) //a is searched element
 //Func returns 1 if found and 0 if not found
 {
-    int f, r, m, val;
+    int f, r, m;
     f = 0;
     r = (sizeof(arr)/sizeof(arr[0]))-1;
-    printf("No of Elements: \n%d\n", r); //printing size of array
+    printf("Value of r: %d\n", r); //printing size of array
     m = (f+r)/2;
-    printf("Enter the value to be Searched: ");
-    scanf("%d", &val);
     while(f<=r){
-        if (val == arr[m])
+        if (a == arr[m])
         {
             return 1;
         }
-        if (val > arr[m])
+        if (a > arr[m])
         {
             f = m +1;
         }
