@@ -1,10 +1,10 @@
 //Program to Implement Binary Search
-//Not Completed Yet
+//Not Completed Yet....last worked 27th Nov
 
 #include<stdio.h>
 #include<stdlib.h>
 
-int static arr[10] = {1, 2, 32, 43, 45, 49, 50, 67, 90, 100};
+int static arr[] = {1, 2, 32, 43, 45, 49, 50, 67, 90, 100, 102, 200};
 
 int binarySearch(int a) //a is searched element
 //Func returns 1 if found and 0 if not found
@@ -13,11 +13,11 @@ int binarySearch(int a) //a is searched element
     f = 0;
     r = (sizeof(arr)/sizeof(arr[0]))-1;
     printf("Value of r: %d\n", r); //printing size of array
-    m = (f+r)/2;
     while(f<=r){
+        m = (f+r)/2;
         if (a == arr[m])
         {
-            return 1;
+            return m;
         }
         if (a > arr[m])
         {
@@ -28,7 +28,7 @@ int binarySearch(int a) //a is searched element
         }
         
     }
-    return 0;
+    return -1;
 }
 
 
@@ -44,14 +44,16 @@ int main(){
 
     }
 
+    
+
     printf("Enter the Value to be Searched: ");
     scanf("%d", &a);
     flag = binarySearch(a);
-    if (flag == 1){
-        printf("Element Found");
+    if (flag == -1){
+        printf("Element not Found");
     }
     else{
-        printf("Element not found");
+        printf("Element found at index %d", flag);
     }
 
 
