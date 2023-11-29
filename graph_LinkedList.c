@@ -55,7 +55,7 @@ vertex* search(int x)  //Search Function... Problem found during testing
 	s = head;
     if (s == '\0') //No Vertex
     {
-        printf("No Vertex is present ");
+        printf("No Vertex is present "); //Slight changes required
         return '\0';
     }
 
@@ -64,23 +64,13 @@ vertex* search(int x)  //Search Function... Problem found during testing
         s = s->next;
         if(s == '\0')
         {
-            printf("Element not Found");
+            printf("Element not Found"); //Slight changes required
             break;
         }
 	}
 	return s;
 }
 
-/*Gives address of the last edge 
-of the Vertex.....Function not required... Also mistake is there*/
-/*edge* searchLastEdge() 
-{
-    h = head;
-    while(h -> next != '\0'){
-        h = h->next;
-    }
-    return h;
-}  */
 
 void createEdge(int a, int b)
 {
@@ -139,26 +129,6 @@ void createEdge(int a, int b)
     }
 }
 
-/*int display() //display function... completed
-{
-	//printf("3--%d\n", head); //Testing
-    vertex *d;
-    d = head;
-    if(d == '\0'){
-        printf("No Elements to Display!");
-        return 0;
-    }
-    else
-    {
-    	printf("Elements of the Graph are:\n");
-    	while(d != '\0'){
-        	printf("%4d\n", d->data);
-        	d = d -> next;
-    	}
-    	
-	}
-	
-} */
 
 void display() //Replace the h variable with some other variable
 {
@@ -195,7 +165,7 @@ int main()
             break;
             
             case 2: printf("Enter the Vertices you want to connect: ");
-            scanf("%d %d", a, b); 
+            scanf("%d %d", &a, &b); 
             createEdge(a , b);
             break;
             
