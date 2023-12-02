@@ -19,7 +19,7 @@ typedef struct vertex{
 
 }vertex ;
 
-vertex *head='\0', *h; //h points last inserted vertex, initially head = NULL
+vertex *head='\0', *lv; //lv points last inserted vertex(to be only used ), initially head = NULL
 void createVertex() //Vertex Creation
 {
 	char c;
@@ -33,13 +33,13 @@ void createVertex() //Vertex Creation
 	    if(head == '\0') //Test case
         {
 	        head = t;
-	        h = t;
+	        lv = t;
 	        t -> next = '\0';
 	        t -> firstEdge ='\0';
 	    }
 	    else
         {
-	        h -> next = t;
+	        lv -> next = t;
 	        t -> next = '\0';
 	        t -> firstEdge = '\0';
 	    }
