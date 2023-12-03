@@ -130,7 +130,7 @@ void createEdge(int a, int b)
 }
 
 
-void display() //Replace the h variable with some other variable
+void display() //Replace the h variable with some other variable... Change Variable and Check
 {
     vertex *h;
     edge *t;
