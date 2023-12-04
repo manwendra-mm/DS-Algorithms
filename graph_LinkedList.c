@@ -1,8 +1,4 @@
-/*Sir I worked for continuous 2 days on this program but it's not working perfectly. 
-I am submitting my progress. 
-It's almost done but I think think that I can figure out the problem myself I just require
-some more time :)   
-*/
+// Program to implement Graph Data Structure using Linked List
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
