@@ -1,4 +1,6 @@
 // Program to implement Graph Data Structure using Linked List
+
+// Multiple Edges are getting created for single edge, resolve this problem 
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
@@ -38,6 +40,7 @@ void createVertex() //Vertex Creation
 	        lv -> next = t;
 	        t -> next = '\0';
 	        t -> firstEdge = '\0';
+            lv = lv -> next;
 	    }
 	    fflush(stdin);
 		printf("Do you want to create new Vertex(y/n): ");
