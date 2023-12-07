@@ -101,9 +101,17 @@ void createEdge(int a, int b)
                 p1 = p1 -> next;
             } 
             //Now p1 points to last Edge
-            t1 -> data = b;
-            p1 -> next = t1;
-            t1 -> next = '\0';
+            if(t1 -> data == b) //Edge exists or not
+            {
+                printf("This Edge already Exists for %d", b);
+            }
+            else
+            {
+                t1 -> data = b;
+                p1 -> next = t1;
+                t1 -> next = '\0';
+            }
+            
         }
 
         
@@ -121,9 +129,17 @@ void createEdge(int a, int b)
                 p2 = p2 -> next;
             }
             //Now p2 points to last edge
-            t2 -> data = a;
-            p2 -> next = t2;
-            t2 -> next = '\0';
+
+            if(t2 -> data == a) //Edge exists or not
+            {
+                printf("This Edge already Exists for %d", a);
+            }
+            else
+            {
+                t2 -> data = a;
+                p2 -> next = t2;
+                t2 -> next = '\0';
+            }
         }
     }
 }
