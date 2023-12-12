@@ -3,7 +3,7 @@ This Repo will be having all DSA Programs that I have solved and will be solving
 
 This Repository has the Programs to Implement:
 1. Queue: queue.c
-2. Stack: [Stack_PushPop.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/Stack_PushPop.c)
+2. Stack: [Stack_PushPop.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/stack.c)
 3. Circular Queue: [circularQueue.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/circularQueue.c)
 4. Linked List (Singly Linked): [linkedList.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/linkedList.c)
 5. Double Linked List: [doubleLinkedList.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/doubleLinkedList.c)
