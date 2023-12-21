@@ -6,9 +6,9 @@ int main(){
     int i, j, min;
     int temp;
     int arr[8];
-    printf("Enter 8 Elements: ");
+    printf("Enter the Elements: ");
 
-    for (i = 0; i < 8; i++){
+    for (i = 0; i < (sizeof(arr)/sizeof(arr[0])); i++){
         scanf("%d", &arr[i]);
     }
     printf("\n");
