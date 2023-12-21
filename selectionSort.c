@@ -1,10 +1,10 @@
 //Program to Implemet Selection Sort
-//Program not complete yet.........
+//Completed
 #include<stdio.h>
 
 int main(){
-    int i, j, smallIndex;
-    int temp, smallest;
+    int i, j, min;
+    int temp;
     int arr[8];
     printf("Enter 8 Elements: ");
 
@@ -13,22 +13,24 @@ int main(){
     }
     printf("\n");
 
-    for(i = 0; i < 8; i++){
-        smallest = arr[i];
-        for(j = i+1; j < 8; j++){
-            if(arr[j]< smallest){
-                smallest = arr[j];
-                smallIndex = j;
+    for(i = 0; i < (sizeof(arr)/sizeof(arr[0]))-1; i++){
+        min = i;
+        for(j = i+1; j < (sizeof(arr)/sizeof(arr[0])); j++){
+            if(arr[j]< arr[i]){
+                min = j;
             }
         }
-        //Here 'smallest' has the Smallest element of the array
-        temp = arr[i];
-        arr[i] = smallest;
-        arr[j] = arr[smallIndex];
+        
+        //Here min variable will be having index of smallest Element
+        if(min != i){
+            temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
+        }
     }
     printf("The Sorted Array is: ");
     for (i = 0; i < (sizeof(arr)/ sizeof(arr[0])); i++){
-        printf("%5d", arr[i]);
+        printf("%3d", arr[i]);
     }
 
 }
