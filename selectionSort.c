@@ -32,5 +32,5 @@ int main(){
     for (i = 0; i < (sizeof(arr)/ sizeof(arr[0])); i++){
         printf("%3d", arr[i]);
     }
-
+    
 }

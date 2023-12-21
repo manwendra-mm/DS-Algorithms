@@ -12,5 +12,6 @@ This Repository has the Programs to Implement:
 8. Finding n^th prime number: [nthPrimeNum.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/nthPrimeNum.c)
 9. [pairOfPrime.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/pairOfPrime.c)
 10. Binary Search: [binarySearch.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/binarySearch.c)
+11. Selection Sort: [selectionSort.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/selectionSort.c)
 
 
