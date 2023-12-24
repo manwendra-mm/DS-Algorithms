@@ -1,26 +1,18 @@
-//Program to Implemet Bubble Sort
-//Program not complete yet.........
-#include<stdio.h>
+#include <stdio.h>
 
 int main(){
-    int i, j;
-    int temp;
     int arr[8];
-    printf("Enter 8 Elements: ");
-
-    for (i = 0; i < 20; i++){
-        scanf("\n%d", &arr[i]);
-    }
-    printf("\n");
-
-    for(i = 0; i < 8; i++){
-        for(j = i; j < 8; j++){
-            if(arr[j]< temp){
-                temp = arr[j];
-            }
-            
+    int p, temp; //p points the left element of the Bubble
+    for(i=0; i < (sizeof(arr)/sizeof(arr[0]))-1; i++){
+        if(arr[i]>arr[i+1]){
+            temp = arr[i];
+            arr[i] = arr[i+1];
+            arr[i+1] = temp;
         }
-
     }
-
+    
+    printf("The Sorted Array is:\n");
+    for(i=0; i < sizeof(arr)/sizeof(arr[0]); i++){
+        printf("%3d", arr[i]);
+    }
 }
