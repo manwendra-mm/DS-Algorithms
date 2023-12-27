@@ -1,18 +1,49 @@
+//Program to Implement Bubble Sort
+//Completed........ 
+
 #include <stdio.h>
 
 int main(){
-    int arr[8];
-    int p, temp; //p points the left element of the Bubble
+    int arr[8] = {45, 56, 12, 34, 87, 55, 43, 5};
+    int p, temp, i, j;
+    
+    printf("1- Sort Already Existing array \n2- Sort Scanned Elements\nEnter your Choice: ");
+    scanf("%d", &p);
+    switch(p){
+        case 1:
+        // Array has already been Initialized during Declaration 
+        break;
+
+        case 2: 
+        //Scanning the Elements
+        printf("Enter the Elements: \n");
+        for(i=0; i < (sizeof(arr)/sizeof(arr[0])); i++)
+        {
+            scanf("%d", &arr[i]);
+        }
+        break;
+        
+        default:
+        printf("Invalid Input");
+        
+    }
+
+    //Sorting 
     for(i=0; i < (sizeof(arr)/sizeof(arr[0]))-1; i++){
-        if(arr[i]>arr[i+1]){
-            temp = arr[i];
-            arr[i] = arr[i+1];
-            arr[i+1] = temp;
+        for (j = 0; j < (sizeof(arr)/sizeof(arr[0])-1); j++ ){
+            if(arr[j]>arr[j+1]) //If Right Element of Bubble is smaller then Swap
+            {
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
         }
     }
     
+    //Display
     printf("The Sorted Array is:\n");
-    for(i=0; i < sizeof(arr)/sizeof(arr[0]); i++){
+    for(i=0; i < sizeof(arr)/sizeof(arr[0]); i++)
+    {
         printf("%3d", arr[i]);
     }
 }
