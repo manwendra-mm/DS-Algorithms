@@ -18,6 +18,7 @@ typedef struct vertex{
 }vertex ;
 
 vertex *head='\0', *lv; //lv points last inserted vertex(to be only used ), initially head = NULL
+
 void createVertex() //Vertex Creation
 {
 	char c;
@@ -30,6 +31,7 @@ void createVertex() //Vertex Creation
 	    
 	    if(head == '\0') //Test case
         {
+            //For first vertex creation
 	        head = t;
 	        lv = t;
 	        t -> next = '\0';
@@ -37,6 +39,7 @@ void createVertex() //Vertex Creation
 	    }
 	    else
         {
+            //For next vertex creations
 	        lv -> next = t;
 	        t -> next = '\0';
 	        t -> firstEdge = '\0';
@@ -89,12 +92,14 @@ void createEdge(int a, int b)
         t2 = (edge *) malloc(sizeof(edge));
         if (v1 -> firstEdge == '\0') //For t1 edge
         {
+            //For first vertex
             v1 -> firstEdge = t1;
             t1 -> data = b;
             t1 -> next = '\0';
         }
         else
         {
+            //For second vertex
             p1 = v1 -> firstEdge;
             while(p1-> next != '\0') //For getting address of Last Edge
             {
@@ -117,12 +122,14 @@ void createEdge(int a, int b)
         
         if (v2 -> firstEdge == '\0') //For t2 edge
         {    
+            //For first vertex
             v2 -> firstEdge = t2;
             t2 -> data = a;
             t2 -> next = '\0';
         }
         else 
         {
+            //For second vertex
             p2 = v2 -> firstEdge;
             while(p2 -> next != '\0')  //For getting address of Last Edge
             {
