@@ -13,5 +13,5 @@ This Repository has the Programs to Implement:
 9. [pairOfPrime.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/pairOfPrime.c)
 10. Binary Search: [binarySearch.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/binarySearch.c)
 11. Selection Sort: [selectionSort.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/selectionSort.c)
-
+12. Bubble Sort: [bubbleSort.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/bubbleSort.c)
 

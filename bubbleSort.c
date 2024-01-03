@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 int main(){
-    int arr[8] = {45, 56, 12, 34, 87, 55, 43, 5};
+    int arr[8] = {45, 92, 12, 94, 87, 55, 43, 5};
     int p, temp, i, j;
     
     printf("1- Sort Already Existing array \n2- Sort Scanned Elements\nEnter your Choice: ");

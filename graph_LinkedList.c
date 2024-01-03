@@ -1,11 +1,12 @@
 // Program to implement Graph Data Structure using Linked List
+// Multiple Edges are getting created for single edge, resolve this problem
 
-// Multiple Edges are getting created for single edge, resolve this problem 
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
 
-typedef struct edge{
+typedef struct edge
+{
     int data;
     struct edge *next;
 }edge;
@@ -127,11 +128,11 @@ void createEdge(int a, int b)
             t2 -> data = a;
             t2 -> next = '\0';
         }
-        else 
+        else
         {
             //For second vertex
             p2 = v2 -> firstEdge;
-            while(p2 -> next != '\0')  //For getting address of Last Edge
+            while(p2 -> next != '\0') //For getting address of Last Edge
             {
                 p2 = p2 -> next;
             }
