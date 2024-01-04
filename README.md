@@ -14,4 +14,4 @@ This Repository has the Programs to Implement:
 10. Binary Search: [binarySearch.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/binarySearch.c)
 11. Selection Sort: [selectionSort.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/selectionSort.c)
 12. Bubble Sort: [bubbleSort.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/bubbleSort.c)
-
+13. Insertion Sort: [insertionSort.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/insertionSort.c)
