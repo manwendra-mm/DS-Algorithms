@@ -103,7 +103,22 @@ void displayReversed() //Completed...
     }
 }
 
+void menu(){
+  printf("1.Create /n2.Search /n3.Display /n4.Display Reversed List /n5.Exit");
+}
+
 void main(){
+  void menu();
+  int choice;
+  scanf("%d", &choice);
+  switch (choice){
+    case 1: create();
+    break;
+
+    case 2: search ();
+    break;
+    
+  }
     
     
 }
