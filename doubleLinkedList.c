@@ -107,7 +107,7 @@ void menu(){
   printf("1.Create /n2.Search /n3.Display /n4.Display Reversed List /n5.Exit");
 }
 
-void main(){
+int main(){
   void menu();
   int choice;
   scanf("%d", &choice);
