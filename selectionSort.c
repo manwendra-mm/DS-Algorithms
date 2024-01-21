@@ -1,19 +1,35 @@
 //Program to Implemet Selection Sort
-//Completed
+//Not working properly & make the program function wise
 #include<stdio.h>
 
-int main(){
-    int i, j, min;
-    int temp;
-    int arr[8];
-    printf("Enter the Elements: ");
+int arr[8] = {9,8,7,6,5,4,3,2};
+int i;
 
+void display(){
+    printf("The Sorted Array is: ");
+    for (i = 0; i < (sizeof(arr)/ sizeof(arr[0])); i++){
+        printf("%3d", arr[i]);
+    }
+    
+}
+
+void scanElements(){
     for (i = 0; i < (sizeof(arr)/sizeof(arr[0])); i++){
         scanf("%d", &arr[i]);
     }
     printf("\n");
 
-    for(i = 0; i < (sizeof(arr)/sizeof(arr[0]))-1; i++){
+}
+
+int main(){
+    int j, min;
+    int temp;
+    
+    /*printf("Enter 8 Elements: ");
+	scanElements(); */
+    
+
+    for(i = 0; i < (sizeof(arr)/sizeof(arr[0]))-1 ; i++){
         min = i;
         for(j = i+1; j < (sizeof(arr)/sizeof(arr[0])); j++){
             if(arr[j]< arr[i]){
@@ -28,9 +44,8 @@ int main(){
             arr[min] = temp;
         }
     }
-    printf("The Sorted Array is: ");
-    for (i = 0; i < (sizeof(arr)/ sizeof(arr[0])); i++){
-        printf("%3d", arr[i]);
-    }
+
+    display();
+    
     
 }

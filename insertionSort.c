@@ -8,7 +8,8 @@ int main(){
     
     printf("1- Sort Already Existing array \n2- Sort Scanned Elements\nEnter your Choice: ");
     scanf("%d", &p);
-    switch(p){
+    switch(p)
+    {
         case 1:
         // Array has already been Initialized during Declaration 
         break;
@@ -28,7 +29,8 @@ int main(){
     }
 
     //Sorting
-    for(i=1; i<(sizeof(arr)/sizeof(arr[0])); i++){
+    for(i=1; i<(sizeof(arr)/sizeof(arr[0])); i++)
+    {
         current = arr[i];
         j = i-1;
         while(arr[j]>current && j >= 0){

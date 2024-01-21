@@ -1,10 +1,10 @@
 //Program to Implement Bubble Sort
-//Completed........ 
+//Completed.....
 
 #include <stdio.h>
 
 int main(){
-    int arr[8] = {45, 92, 12, 94, 87, 55, 43, 5};
+    int arr[8] = {23, 45, 654 ,1 ,67 ,23, 78, 12};
     int p, temp, i, j;
     
     printf("1- Sort Already Existing array \n2- Sort Scanned Elements\nEnter your Choice: ");
@@ -44,6 +44,6 @@ int main(){
     printf("The Sorted Array is:\n");
     for(i=0; i < sizeof(arr)/sizeof(arr[0]); i++)
     {
-        printf("%3d", arr[i]);
+        printf("%d  ", arr[i]);
     }
 }
