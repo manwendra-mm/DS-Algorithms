@@ -1,12 +1,14 @@
 //Program to Implement Insertion Sort
-//Not Completed... Some problem found
+//Not Completed... Make it function wise
 #include<stdio.h>
 
+int arr[10] = {12,4,8,50,1,9,29,6,7,56};
+int p, i, j, current, n;
+n = sizeof(arr)/sizeof(arr[0]);
+
 int main(){
-    int arr[8] = {45, 92, 12, 94, 87, 55, 43, 5};
-    int p, i, j, current;
     
-    printf("1- Sort Already Existing array \n2- Sort Scanned Elements\nEnter your Choice: ");
+    /* printf("1- Sort Already Existing array \n2- Sort Scanned Elements\nEnter your Choice: ");
     scanf("%d", &p);
     switch(p)
     {
@@ -17,7 +19,7 @@ int main(){
         case 2: 
         //Scanning the Elements
         printf("Enter the Elements: \n");
-        for(i=0; i < (sizeof(arr)/sizeof(arr[0])); i++)
+        for(i=0; i < n; i++)
         {
             scanf("%d", &arr[i]);
         }
@@ -26,15 +28,15 @@ int main(){
         default:
         printf("Invalid Input");
         
-    }
+    } */
 
     //Sorting
-    for(i=1; i<(sizeof(arr)/sizeof(arr[0])); i++)
+    for(i=1; i<n; i++)
     {
         current = arr[i];
         j = i-1;
-        while(arr[j]>current && j >= 0){
-            arr[i] = arr[j];
+        while(j >= 0 && arr[j]>current){
+            arr[j+1] = arr[j];
             j--;
         }
         arr[j+1] = current;
@@ -42,7 +44,7 @@ int main(){
 
     //Display
     printf("Sorted Array: \n");
-    for(i=0; i<(sizeof(arr)/sizeof(arr[0])); i++){
-        printf("%5d", arr[i]);
+    for(i=0; i < n; i++){
+        printf("%d  ", arr[i]);
     }
 }
