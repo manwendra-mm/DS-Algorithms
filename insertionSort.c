@@ -3,8 +3,30 @@
 #include<stdio.h>
 
 int arr[10] = {12,4,8,50,1,9,29,6,7,56};
-int p, i, j, current, n;
-n = sizeof(arr)/sizeof(arr[0]);
+int p, i, j, current;
+int n = sizeof(arr)/sizeof(arr[0]);
+
+void insertionSort() //Here list[] is parameter
+{
+    for(i=1; i<n; i++)
+    {
+        current = arr[i];
+        j = i-1;
+        while(j >= 0 && arr[j]>current){
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = current;
+    }
+}
+
+void display(){
+    printf("Sorted Array is: \n");
+    for(i=0; i < n; i++){
+        printf("%d  ", arr[i]);
+    }
+
+}
 
 int main(){
     
@@ -31,20 +53,10 @@ int main(){
     } */
 
     //Sorting
-    for(i=1; i<n; i++)
-    {
-        current = arr[i];
-        j = i-1;
-        while(j >= 0 && arr[j]>current){
-            arr[j+1] = arr[j];
-            j--;
-        }
-        arr[j+1] = current;
-    }
+    insertionSort();
+    
 
     //Display
-    printf("Sorted Array: \n");
-    for(i=0; i < n; i++){
-        printf("%d  ", arr[i]);
-    }
+    display();
+    
 }
