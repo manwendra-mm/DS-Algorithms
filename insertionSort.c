@@ -1,5 +1,5 @@
 //Program to Implement Insertion Sort
-//Not Completed... Make it function wise
+//Completed... 
 #include<stdio.h>
 
 int arr[10] = {12,4,8,50,1,9,29,6,7,56};
