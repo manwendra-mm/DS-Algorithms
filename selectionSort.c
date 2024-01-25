@@ -1,9 +1,9 @@
 //Program to Implemet Selection Sort
-//Not working properly & make the program function wise
+//Completed...
 
 #include<stdio.h>
 
-int arr[8] = {12,98,11,87,10,97,24, 14};
+int arr[10] = {12,98,11,87,10,97,24, 14, 56, 42};
 int i, n = sizeof(arr)/sizeof(arr[0]);
 
 void display(){
@@ -22,7 +22,7 @@ void scanElements(){
 
 }
 
-int main(){
+void selectionSort(){
     int j, min;
     int temp;
     
@@ -47,7 +47,12 @@ int main(){
         }
     }
 
-    display();
+}
+
+int main(){
+
+    selectionSort();
     
+    display();
     
 }
