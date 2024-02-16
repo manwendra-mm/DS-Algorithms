@@ -28,16 +28,17 @@ int create() //create function... completed
         t = (node *) malloc(sizeof(node));
         t -> n = x;
 
-        if (head == '\0'){
+        if (head == '\0') //For 1st node
+        {
             head = t;
             h = t;
-            t ->next = '\0';
+            t ->next = head;
         }
-        else
+        else 
 		{
             h -> next = t;
             h = t;    
-            t ->next = '\0';
+            t ->next = head;
         }
         
         fflush(stdin); 
