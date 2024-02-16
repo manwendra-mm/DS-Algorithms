@@ -1,6 +1,5 @@
 // Program to Implement Linked List (Simplest Form- Linear & Single Linked)
-/* Functions Written- Menu,Create,Display,Count,Search,delByPosition,addBefore,
-addAfter, main. */
+// Not Completed Yet ...
 #include <stdio.h>
 #include <stdlib.h>
 
