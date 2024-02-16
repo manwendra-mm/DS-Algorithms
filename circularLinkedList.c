@@ -62,10 +62,11 @@ void display() //display function... completed
     else
     {
     	printf("Elements of the Linked List are:\n");
-    	while(d != '\0'){
+    	do
+        {
         	printf("%4d\n", d->n);
         	d = d -> next;
-    	}
+    	} while(d != head);
     	
 	}
 	
@@ -79,10 +80,11 @@ int count() //count(returns 0 if no element)... completed
     int c=0;
     
     node *p = head;
-    while(p != '\0'){
+    do
+    {
         c++;
         p = p -> next;
-    }
+    } while(p != head);
     return c;
 }
 
@@ -98,8 +100,8 @@ node* search(int x) //Search Function returns '\0' if Element not found... compl
 
 	while(p -> n != x){
         p = p->next;
-        if(p == '\0'){  
-            return p;
+        if(p == head){  
+            return '\0';
         }
 	}
 	return p;
@@ -142,7 +144,7 @@ void addBefore(int x, int a) //x to be searched & a to be added... Completed
     node *r, *p, *q;
     p = search(x);
 
-    if (p == '\0') //Test case
+    if (p == '\0') //Test case, search() returns NULL if element was not found
 	{
     	printf("Element not Found ");
         return;
@@ -187,7 +189,7 @@ void addAfter(int x, int a)  //x is searched, a is added... Completed
     
 }
 
-void rev() //Reverse... Completed
+void rev() //Reverse... Not Working Properly in this program_ Stopping in Run Time
 {
     node *p1, *p2, *p3;
     if(head == '\0' || head -> next == '\0'){
@@ -198,7 +200,7 @@ void rev() //Reverse... Completed
     p2 = p1 -> next;
     p3 = p2 -> next;
     p1 -> next = '\0';
-    while(p2 != '\0')
+    while(p2 != head)
     {
         p2->next = p1;
         p1 = p2;
@@ -241,7 +243,7 @@ int main()
             break;
 
             case 4: //Del by Position
-            printf("Enter the Position to be Deleted: ");
+            printf("Enter the Position to be Deleted(Count 1st element as position 1): ");
             scanf("%d", &pos);
             delByPosition(pos);
             break;
@@ -277,5 +279,3 @@ int main()
     }
 }
 
-/*printf("\n\n1. Create \n2.Display \n3. Count \n4. Delete by Position \n5. Add Before \n");
-    printf("6. Add After\n ");*/
