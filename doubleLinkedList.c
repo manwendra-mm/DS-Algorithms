@@ -109,16 +109,18 @@ void menu(){
 
 int main(){
   void menu();
-  int choice;
+  int choice, var;
   scanf("%d", &choice);
   switch (choice){
     case 1: create();
     break;
 
-    case 2: search ();
+    case 2: 
+    printf("Enter the value to be Searched: ");
+    scanf("%d", &var);
+    search(var);
     break;
     
   }
-    
-    
+
 }
