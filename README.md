@@ -16,4 +16,4 @@ This Repository has the Programs to Implement:
 12. Bubble Sort: [bubbleSort.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/bubbleSort.c)
 13. Insertion Sort: [insertionSort.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/insertionSort.c)
 14. Circular Linked List: [circularLinkedList.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/circularLinkedList.c)
-15. Merge Sort: [MergeSort.c}(https://github.com/manwendra-mm/DS-Algorithms/blob/main/MergeSort.c)
+15. Merge Sort: [MergeSort.c](https://github.com/manwendra-mm/DS-Algorithms/blob/main/MergeSort.c)
