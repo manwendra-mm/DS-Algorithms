@@ -2,7 +2,6 @@
 //Not Completed Yet....last worked 27th Nov
 
 #include<stdio.h>
-#include<stdlib.h>
 
 int static arr[] = {1, 2, 32, 43, 45, 49, 50, 67, 90, 100, 102, 200};
 
@@ -12,7 +11,7 @@ int binarySearch(int a) //a is searched element
     int f, r, m;
     f = 0;
     r = (sizeof(arr)/sizeof(arr[0]))-1;
-    printf("Value of r: %d\n", r); //printing size of array
+    //printf("Value of r: %d\n", r); //printing size of array
     while(f<=r){
         m = (f+r)/2;
         if (a == arr[m])
@@ -34,15 +33,15 @@ int binarySearch(int a) //a is searched element
 
 
 int main(){
-    int a;
+    int a, i;
     int flag = '\0';
     
-    printf("The Elements are:\n");
-    for (int i =0; i< sizeof(arr)/sizeof(arr[0]); i++) //Printing elements
+    /*printf("The Elements are:\n");
+    for(i =0; i< sizeof(arr)/sizeof(arr[0]); i++) //Printing elements
     {
         printf("%d\n", arr[i]);
 
-    }
+    }  */
 
     
 
