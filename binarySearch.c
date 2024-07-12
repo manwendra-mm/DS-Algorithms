@@ -1,5 +1,5 @@
 //Program to Implement Binary Search
-//Not Completed Yet....last worked 27th Nov
+//Complete
 
 #include<stdio.h>
 
@@ -25,7 +25,6 @@ int binarySearch(int a) //a is searched element
         else{
             r = m -1;
         }
-        
     }
     return -1;
 }
