@@ -208,7 +208,6 @@ void rev() //Reverse... Completed
     }
     head = p1;
     printf("LiskedList successfully reversed");
-    
 }
 
 int main()
