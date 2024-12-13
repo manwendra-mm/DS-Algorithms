@@ -14,7 +14,7 @@ node *head, *t, *h;
 
 void menu(){
     printf("\n\n1. Create \n2. Display \n3. Count \n4. Delete by Position \n5. Add Before \n");
-    printf("6. Add After\n7. Reverse \n8. Quit");
+    printf("6. Add After\n7. Reverse \n8. Quit \n9. Find middle node");
 }
 
 int create() //create function... completed
@@ -49,11 +49,11 @@ int create() //create function... completed
 return 1;
 }
 
-void display() //display function... completed
+void display(node* firstNode) //display function... completed
 {
-	printf("3--%d\n", head); //For Testing
+	printf("3--%d\n", firstNode); //For Testing
     node *d;
-    d = head;
+    d = firstNode;
     if(d == '\0'){
         printf("No Elements to Display!");
         return;
@@ -131,7 +131,7 @@ void delByPosition(int pos)
         free(del); // Node is deleted
     }
     printf("\nUpdated Linked List is : \n");
-    display();
+    display(head);
     return;
 }
 
@@ -210,11 +210,48 @@ void rev() //Reverse... Completed
     printf("LiskedList successfully reversed");
 }
 
+
+node* middleNode(node* head){
+    int count = 0;
+    int n, i;
+    node* p = head;
+
+    if (p == '\0'){
+        return head;
+    }
+    
+    while (p != '\0'){
+        count = count +1;
+        p = p-> next;
+    }
+    //printf("No. of elements is : %d", count );
+
+    if (count%2 == 0) //In case of even number of elements
+    {
+        n = (count/2)+1;
+        p = head;
+        for(i = 0; i <= n-2; i++){
+            p = p->next;
+        }
+        return p;
+    }
+    else {
+        n = (count+1)/2;
+        p = head;
+        for(i = 0; i <= n-2; i++){
+            p = p->next;
+        }
+        return p;
+    }
+}
+
+
 int main()
 {
 	head = '\0'; // initializing head as Null
     int a, pos, data, c, val; /*val is value to be searched, data is value to be Inserted, a used in switch, 
 	c stores return value of count()*/ 
+    node *middleValuePointer;
 
     while(1){
     	menu();
@@ -230,7 +267,7 @@ int main()
 
             case 2: //Display
             printf("1--%d\n", head); //Testing
-            display();
+            display(head);
             break;
 
             case 3: //Count
@@ -268,6 +305,10 @@ int main()
             exit(0);
             break;
 
+            case 9:  //Return Middle Node
+            middleValuePointer = middleNode(head);
+            printf("Middle Value is: %d", middleValuePointer->n);
+            break;
 
             default:
             printf("Invalid Option");
